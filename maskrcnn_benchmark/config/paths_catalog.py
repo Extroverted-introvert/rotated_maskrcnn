@@ -5,55 +5,44 @@ import os
 
 
 class DatasetCatalog(object):
-    DATA_DIR = "/kaggle/working/training_dataset"
+    DATA_DIR = "training_dataset"
     DATASETS = {
         # CUSTOM STUFF START
         "cocopose_2014_debug": {
             "img_dir": "LOV/data",
-            "ann_file": "LOV/coco_lov_debug.json"
+            "ann_file": "LOV/coco_lov_debug.json",
         },
         "cocopose_fat_debug": {
             "img_dir": "FAT/data",
-            "ann_file": "FAT/coco_fat_debug.json"
+            "ann_file": "FAT/coco_fat_debug.json",
         },
         "cocopose_fat_mixed_temple": {
             "img_dir": "FAT/data",
-            "ann_file": "FAT/coco_fat_mixed_temple_0.json"
+            "ann_file": "FAT/coco_fat_mixed_temple_0.json",
         },
         "coco_rebin": {
             "img_dir": "/home/bot/Downloads/Rebin/labelled/data",
-            "ann_file": "/home/bot/Downloads/Rebin/labelled/coco_rebin.json"
+            "ann_file": "/home/bot/Downloads/Rebin/labelled/coco_rebin.json",
         },
         # CUSTOM STUFF END
-        
-
-        "smartflow_train": {
-            "img_dir": "train",
-            "ann_file": "train.json"
-        },
-        "smartflow_val": {
-            "img_dir": "valid",
-            "ann_file": "valid.json"
-        },
-        "smartflow_test": {
-            "img_dir": "test",
-            "ann_file": "test.json"
-        },
+        "prosign_train": {"img_dir": "train", "ann_file": "train.json"},
+        "prosign_val": {"img_dir": "valid", "ann_file": "valid.json"},
+        "prosign_test": {"img_dir": "test", "ann_file": "test.json"},
         "coco_2014_train": {
             "img_dir": "Images/train",
-            "ann_file": "Annotations/train.json"
+            "ann_file": "Annotations/train.json",
         },
         "coco_2014_val": {
             "img_dir": "Images/test",
-            "ann_file": "Annotations/test.json"
+            "ann_file": "Annotations/test.json",
         },
         "coco_2014_minival": {
             "img_dir": "coco/val2014",
-            "ann_file": "coco/annotations/instances_minival2014.json"
+            "ann_file": "coco/annotations/instances_minival2014.json",
         },
         "coco_2014_valminusminival": {
             "img_dir": "coco/val2014",
-            "ann_file": "coco/annotations/instances_valminusminival2014.json"
+            "ann_file": "coco/annotations/instances_valminusminival2014.json",
         },
         "keypoints_coco_2014_train": {
             "img_dir": "coco/train2014",
@@ -61,7 +50,7 @@ class DatasetCatalog(object):
         },
         "keypoints_coco_2014_val": {
             "img_dir": "coco/val2014",
-            "ann_file": "coco/annotations/person_keypoints_val2014.json"
+            "ann_file": "coco/annotations/person_keypoints_val2014.json",
         },
         "keypoints_coco_2014_minival": {
             "img_dir": "coco/val2014",
@@ -71,45 +60,30 @@ class DatasetCatalog(object):
             "img_dir": "coco/val2014",
             "ann_file": "coco/annotations/person_keypoints_valminusminival2014.json",
         },
-        "voc_2007_train": {
-            "data_dir": "voc/VOC2007",
-            "split": "train"
-        },
+        "voc_2007_train": {"data_dir": "voc/VOC2007", "split": "train"},
         "voc_2007_train_cocostyle": {
             "img_dir": "voc/VOC2007/JPEGImages",
-            "ann_file": "voc/VOC2007/Annotations/pascal_train2007.json"
+            "ann_file": "voc/VOC2007/Annotations/pascal_train2007.json",
         },
-        "voc_2007_val": {
-            "data_dir": "voc/VOC2007",
-            "split": "val"
-        },
+        "voc_2007_val": {"data_dir": "voc/VOC2007", "split": "val"},
         "voc_2007_val_cocostyle": {
             "img_dir": "voc/VOC2007/JPEGImages",
-            "ann_file": "voc/VOC2007/Annotations/pascal_val2007.json"
+            "ann_file": "voc/VOC2007/Annotations/pascal_val2007.json",
         },
-        "voc_2007_test": {
-            "data_dir": "voc/VOC2007",
-            "split": "test"
-        },
+        "voc_2007_test": {"data_dir": "voc/VOC2007", "split": "test"},
         "voc_2007_test_cocostyle": {
             "img_dir": "voc/VOC2007/JPEGImages",
-            "ann_file": "voc/VOC2007/Annotations/pascal_test2007.json"
+            "ann_file": "voc/VOC2007/Annotations/pascal_test2007.json",
         },
-        "voc_2012_train": {
-            "data_dir": "voc/VOC2012",
-            "split": "train"
-        },
+        "voc_2012_train": {"data_dir": "voc/VOC2012", "split": "train"},
         "voc_2012_train_cocostyle": {
             "img_dir": "voc/VOC2012/JPEGImages",
-            "ann_file": "voc/VOC2012/Annotations/pascal_train2012.json"
+            "ann_file": "voc/VOC2012/Annotations/pascal_train2012.json",
         },
-        "voc_2012_val": {
-            "data_dir": "voc/VOC2012",
-            "split": "val"
-        },
+        "voc_2012_val": {"data_dir": "voc/VOC2012", "split": "val"},
         "voc_2012_val_cocostyle": {
             "img_dir": "voc/VOC2012/JPEGImages",
-            "ann_file": "voc/VOC2012/Annotations/pascal_val2012.json"
+            "ann_file": "voc/VOC2012/Annotations/pascal_val2012.json",
         },
         "voc_2012_test": {
             "data_dir": "voc/VOC2012",
@@ -118,16 +92,16 @@ class DatasetCatalog(object):
         },
         "cityscapes_fine_instanceonly_seg_train_cocostyle": {
             "img_dir": "cityscapes/images",
-            "ann_file": "cityscapes/annotations/instancesonly_filtered_gtFine_train.json"
+            "ann_file": "cityscapes/annotations/instancesonly_filtered_gtFine_train.json",
         },
         "cityscapes_fine_instanceonly_seg_val_cocostyle": {
             "img_dir": "cityscapes/images",
-            "ann_file": "cityscapes/annotations/instancesonly_filtered_gtFine_val.json"
+            "ann_file": "cityscapes/annotations/instancesonly_filtered_gtFine_val.json",
         },
         "cityscapes_fine_instanceonly_seg_test_cocostyle": {
             "img_dir": "cityscapes/images",
-            "ann_file": "cityscapes/annotations/instancesonly_filtered_gtFine_test.json"
-        }
+            "ann_file": "cityscapes/annotations/instancesonly_filtered_gtFine_test.json",
+        },
     }
 
     @staticmethod
@@ -158,8 +132,13 @@ class DatasetCatalog(object):
         elif "smartflow" in name:
             data_dir = DatasetCatalog.DATA_DIR
             attrs = DatasetCatalog.DATASETS[name]
-            args = dict(root=os.path.join(data_dir, attrs["img_dir"]),  # img_dir is the content of step a
-            ann_file=os.path.join(data_dir, attrs["ann_file"]),  # ann_file is the content of a step
+            args = dict(
+                root=os.path.join(
+                    data_dir, attrs["img_dir"]
+                ),  # img_dir is the content of step a
+                ann_file=os.path.join(
+                    data_dir, attrs["ann_file"]
+                ),  # ann_file is the content of a step
             )
             return dict(
                 factory="COCODataset",  # MyDataset corresponds
@@ -190,7 +169,7 @@ class ModelCatalog(object):
         "36761843/e2e_mask_rcnn_X-101-32x8d-FPN_1x": "06_35_59.RZotkLKI",
         "37129812/e2e_mask_rcnn_X-152-32x8d-FPN-IN5k_1.44x": "09_35_36.8pzTQKYK",
         # keypoints
-        "37697547/e2e_keypoint_rcnn_R-50-FPN_1x": "08_42_54.kdzV35ao"
+        "37697547/e2e_keypoint_rcnn_R-50-FPN_1x": "08_42_54.kdzV35ao",
     }
 
     @staticmethod
@@ -204,7 +183,7 @@ class ModelCatalog(object):
     @staticmethod
     def get_c2_imagenet_pretrained(name):
         prefix = ModelCatalog.S3_C2_DETECTRON_URL
-        name = name[len("ImageNetPretrained/"):]
+        name = name[len("ImageNetPretrained/") :]
         name = ModelCatalog.C2_IMAGENET_MODELS[name]
         url = "/".join([prefix, name])
         return url
@@ -218,7 +197,7 @@ class ModelCatalog(object):
         dataset_tag = "keypoints_" if "keypoint" in name else ""
         suffix = ModelCatalog.C2_DETECTRON_SUFFIX.format(dataset_tag, dataset_tag)
         # remove identification prefix
-        name = name[len("Caffe2Detectron/COCO/"):]
+        name = name[len("Caffe2Detectron/COCO/") :]
         # split in <model_id> and <model_name>
         model_id, model_name = name.split("/")
         # parsing to make it match the url address from the Caffe2 models
