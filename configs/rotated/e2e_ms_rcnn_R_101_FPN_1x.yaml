@@ -31,8 +31,8 @@ MODEL:
   MASK_ON: True
   MASKIOU_ON: True
 DATASETS:
-  TRAIN: ("smartflow_train", "smartflow_val")
-  TEST: ("smartflow_test",)
+  TRAIN: ("prosign_train", "prosign_val")
+  TEST: ("prosign_test",)
 DATALOADER:
   SIZE_DIVISIBILITY: 32
 SOLVER:
